@@ -59,6 +59,9 @@ print('methods', methods)
 #                 fig.savefig(os.path.join(plot_path, plot_name))
 #                 # exit(0)
 
+ax_labels = ['a', 'b', 'c', 'd', 'e', 'f']
+fontsize = 16
+
 # graph combos for report touples
 if report_combos:
     graph_combos = {
@@ -196,6 +199,10 @@ if report_combos:
             },
 
         }
+    
+    graph_legend_exceptions = {
+
+    }
 
     res_cache = {
         'amp_err': {
@@ -332,7 +339,10 @@ for n_components in [1]:
                                             phase_text = 0
                                             if (phase_ref == np.pi):
                                                 phase_text = 'pi'
-                                            sub_ax.set_title('Duration: {max_time}h, Sample: {time_step}h, Phase: {phase_text}'.format(max_time=max_time,time_step=time_step, phase_text=phase_text)) # , fontsize=16)
+                                            sub_ax.tick_params(axis='y', labelsize=fontsize-2)
+                                            sub_ax.set_title('Duration: {max_time}h, Sample: {time_step}h, Phase: {phase_text}'.format(max_time=max_time,time_step=time_step, phase_text=phase_text), fontsize=fontsize, pad=15.0) # , fontsize=16)
+                                            sub_ax.set_xlabel('({letter})'.format(letter=ax_labels[plt_idx]), fontsize=fontsize)
+                                            sub_ax.set_ylabel(' ')
                                             violin_subplot = sns.violinplot(data=df_filtered,
                                                                     #  x=p,
                                                                     #  y=error_z, hue="method", log_scale=False)
@@ -342,10 +352,11 @@ for n_components in [1]:
                                             # set common legend
                                             if (plt_idx == len(graph_combos[error][group_id]) - 1):
                                                 handles, labels = sub_ax.get_legend_handles_labels()
-                                                sub_fig.legend(handles, labels, loc='center right')
-
-                                            # remove individual ax legends
-                                            sub_ax.get_legend().remove()
+                                                # sub_fig.legend(handles, labels, loc='center left', bbox_to_anchor=(1.25, 0.5))
+                                                sub_ax.legend(handles, labels, loc='center left', bbox_to_anchor=(1, 0.5))
+                                            else:
+                                                # remove individual ax legends
+                                                sub_ax.get_legend().remove()
 
                                             if (res_cache[error][group_id]['count'] == len(graph_combos[error][group_id])):
                                                 sub_fig.tight_layout()
