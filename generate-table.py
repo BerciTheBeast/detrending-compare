@@ -421,12 +421,18 @@ try:
 
 
     # latex
+    # pd.set_option('display.float_format', '{:.2E}'.format)
 
     # TMP?
     # df_amp_end.to_latex(os.path.join(tables_path, "{outfile_base}_amp.tex".format(outfile_base=outfile_base)), index=False)
     # df_mesor_end.to_latex(os.path.join(tables_path, "{outfile_base}_mesor.tex".format(outfile_base=outfile_base)), index=False)
     # df_phase_end.to_latex(os.path.join(tables_path, "{outfile_base}_phase.tex".format(outfile_base=outfile_base)), index=False)
 
+    # AFTER EVERY RUN:
+    # 0.5 prepend (moves table to the left a bit): \hskip-0.5cm
+    # 1. add & signs so subdivisions are aligned properly
+    # 2. replace markers for "bold" so they work
+    # 3. replace pi with $\pi$
 
     # return df
 except KeyboardInterrupt:
