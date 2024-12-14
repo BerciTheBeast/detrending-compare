@@ -1,12 +1,28 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-- type: thesis
+type: software
 authors:
 - family-names: "Bernard"
   given-names: "Jaka"
   orcid: "https://orcid.org/0000-0002-9123-7892"
 title: "Pregled, implementacija in ovrednotenje metod za predprocesiranje ritmičnih podatkov"
-# version: 2.0.4
-# doi: Don't have one
+url: https://repozitorij.uni-lj.si/IzpisGradiva.php?id=163980
 date-released: 2024-10-15
-url: "https://github.com/BerciTheBeast/detrending-compare"
+references:
+  - type: thesis
+    thesis-type: MSc
+    year: 2024
+    authors:
+    - family-names: "Bernard"
+      given-names: "Jaka"
+      orcid: "https://orcid.org/0000-0002-9123-7892"
+    department: "Fakulteta za računalništvo in informatiko"
+    institution: 
+      - name: "Univerza v Ljubljani"
+        city: Ljubljana
+        country: SI
+    title: "Pregled, implementacija in ovrednotenje metod za predprocesiranje ritmičnih podatkov"
+    # version: 2.0.4
+    # doi: Don't have one
+    date-released: 2024-10-15
+    url: "https://repozitorij.uni-lj.si/IzpisGradiva.php?id=163980"
