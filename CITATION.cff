@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Bernard"
+  given-names: "Jaka"
+  orcid: "https://orcid.org/0000-0002-9123-7892"
+title: "Pregled, implementacija in ovrednotenje metod za predprocesiranje ritmičnih podatkov"
+# version: 2.0.4
+# doi: Don't have one
+date-released: 2024-10-15
+url: "https://github.com/BerciTheBeast/detrending-compare"
